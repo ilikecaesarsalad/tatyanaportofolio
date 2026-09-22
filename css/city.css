@@ -1,0 +1,276 @@
+/* ==========================================================================
+   Tatyana Faradilla R. - night-city finale + motion layer
+   A street canyon after midnight: receding facades on both sides, a wet road,
+   street lamps, and the skyline glowing at the end of the avenue.
+   16. Motion tokens   17. Scroll motion   18. 3D interactions
+   19. City scene      20. Section atmosphere
+   21. Responsive      22. Reduced motion
+   ========================================================================== */
+
+:root {
+  --asphalt:   #07030F;   /* the road you are standing on */
+  --facade:    #0A1022;   /* building faces */
+  --facade-lit:#16203C;   /* faces catching the street light */
+  --haze:      #12203F;
+  --ease-soft:  cubic-bezier(.16, .84, .28, 1);
+  --ease-swing: cubic-bezier(.34, 1.3, .48, 1);
+}
+
+/* 17. Scroll motion ======================================================== */
+
+.stage-in {
+  opacity: 0;
+  transform: perspective(1400px) translate3d(0, 40px, -70px) rotateX(4deg);
+  transition:
+    opacity 1s var(--ease-soft) var(--d, 0ms),
+    transform 1.2s var(--ease-soft) var(--d, 0ms);
+  will-change: transform, opacity;
+}
+.stage-in.is-in { opacity: 1; transform: none; }
+
+/* per-letter title lift */
+.split { display: inline-block; white-space: pre; }
+.split span {
+  display: inline-block;
+  transform: translate3d(0, .6em, 0) rotateX(-48deg);
+  opacity: 0;
+  transition: transform .9s var(--ease-swing), opacity .6s linear;
+  transition-delay: calc(var(--i, 0) * 32ms);
+}
+.is-in .split span, .split.is-in span { transform: none; opacity: 1; }
+
+/* scroll progress rail */
+.progress {
+  position: fixed; inset: 0 auto auto 0;
+  height: 2px; width: 100%;
+  transform: scaleX(0); transform-origin: 0 50%;
+  background: linear-gradient(90deg, #4AE8F0 0%, #9B6BFF 62%, #8F7BFF 100%);
+  box-shadow: 0 0 12px rgba(74, 232, 240, .5);
+  z-index: 61; pointer-events: none;
+}
+
+/* small marks drifting like distant lights */
+.float { animation: float-y var(--float-t, 9s) ease-in-out infinite alternate; }
+@keyframes float-y {
+  from { transform: translate3d(0, -5px, 0) rotate(-2deg); }
+  to   { transform: translate3d(0, 6px, 0) rotate(3deg); }
+}
+
+/* 18. 3D interactions ====================================================== */
+
+.tilt {
+  transform-style: preserve-3d;
+  transition: transform .55s var(--ease-soft), box-shadow .55s var(--ease);
+  will-change: transform;
+}
+.tilt > * { transform: translateZ(0); }
+.tilt.is-tilting { transition: transform .12s linear; }
+
+.project.tilt .project__media { transform: translateZ(26px); transition: transform .55s var(--ease-soft); }
+.project.tilt:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(190, 210, 250, .2),
+    0 40px 80px -42px rgba(0, 0, 0, 1),
+    0 0 60px -30px rgba(74, 232, 240, .5);
+}
+.craft.tilt:hover .craft__icon { transform: translateZ(36px) scale(1.12) rotate(-4deg); }
+.craft__icon { transition: transform .55s var(--ease-swing); }
+
+.btn, .filter, .copy { transition: transform .35s var(--ease-swing), background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease); }
+
+/* 19. City scene =========================================================== */
+
+.contact--city {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+    rgba(5, 8, 15, 0) 0%,
+    rgba(5, 8, 15, .5) 14%,
+    #07030F 36%,
+    #060A14 70%,
+    #04060C 100%);
+  padding-top: clamp(80px, 14vw, 180px);
+  padding-bottom: clamp(0px, 2vw, 20px);
+}
+
+/* holds the closing words off the facades */
+.contact--city::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(4, 7, 14, 0) 0%,
+    rgba(4, 7, 14, .42) 10%,
+    rgba(4, 7, 14, .54) 30%,
+    rgba(4, 7, 14, .52) 60%,
+    rgba(4, 7, 14, .34) 78%,
+    rgba(4, 7, 14, .12) 92%,
+    transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact--city .contact__inner {
+  position: relative;
+  z-index: 10;
+  background:
+    radial-gradient(ellipse 84% 76% at 50% 48%, rgba(8, 3, 20, .62) 0%, rgba(8, 3, 20, .34) 50%, transparent 78%);
+  padding: clamp(32px, 5vw, 60px) clamp(16px, 4vw, 40px);
+  border-radius: clamp(18px, 3vw, 32px);
+}
+
+/* closing line resting on the street */
+.foot { position: relative; z-index: 8; }
+.foot a, .foot__inner p { color: inherit; }
+
+/* ---- Atmospheric particles across the page ---- */
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: var(--size, 4px);
+  height: var(--size, 4px);
+  opacity: 0;
+  animation: sparkle-float var(--dur, 7s) ease-in-out var(--delay, 0s) infinite;
+}
+.sparkle[data-shape="star"]::before,
+.sparkle[data-shape="star"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(238, 228, 210, .5);
+  border-radius: 1px;
+  box-shadow: 0 0 5px rgba(74, 232, 240, .3);
+}
+.sparkle[data-shape="star"]::before { transform: rotate(45deg) scale(.36, 1); }
+.sparkle[data-shape="star"]::after  { transform: rotate(-45deg) scale(.36, 1); }
+.sparkle[data-shape="dot"] {
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(226, 234, 252, .42) 0%, rgba(226, 234, 252, 0) 70%);
+}
+.sparkle[data-shape="diamond"] {
+  transform: rotate(45deg);
+  border-radius: 1px;
+  background: radial-gradient(circle, rgba(74, 232, 240, .34) 0%, rgba(74, 232, 240, 0) 72%);
+}
+@keyframes sparkle-float {
+  0%   { opacity: 0; transform: translate(0, 0) scale(.6); }
+  18%  { opacity: .44; }
+  50%  { opacity: .38; transform: translate(var(--drift, 18px), -26px) scale(1); }
+  84%  { opacity: .34; }
+  100% { opacity: 0; transform: translate(calc(var(--drift, 18px) * -0.5), 8px) scale(.5); }
+}
+
+/* hover states on the content cards */
+.craft:hover::before { opacity: 1; }
+.craft:hover .craft__name { text-shadow: 0 0 22px rgba(74, 232, 240, .28); }
+.chips li { transition: transform .35s var(--ease), box-shadow .35s ease, border-color .35s ease; }
+.chips li:hover {
+  transform: translateY(-2px);
+  border-color: var(--chip-glow, rgba(74, 232, 240, .5));
+  box-shadow: 0 0 18px -6px var(--chip-glow, rgba(74, 232, 240, .5)), inset 0 1px 0 rgba(240, 228, 206, .2);
+}
+.way:hover { border-color: transparent; }
+
+/* project media reads as an illuminated panel */
+.project__media::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  background:
+    linear-gradient(196deg, rgba(240, 224, 196, .18) 0%, rgba(240, 224, 196, 0) 44%),
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, .1) 0%, transparent 62%);
+  opacity: 0;
+  transition: opacity .55s ease;
+  pointer-events: none;
+}
+.project:hover .project__media::after { opacity: 1; }
+
+/* 20. Section atmosphere =================================================== */
+
+/* thin structural rules, like the edge of a facade */
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(38%, 420px);
+  background-image: repeating-linear-gradient(90deg,
+    rgba(150, 130, 255, .26) 0 1px, transparent 1px 68px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 60%, transparent),
+                      linear-gradient(180deg, transparent, #000 34%, #000 66%, transparent);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(90deg, transparent, #000 60%, transparent),
+                      linear-gradient(180deg, transparent, #000 34%, #000 66%, transparent);
+          mask-composite: intersect;
+  opacity: .85;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 21. Responsive =========================================================== */
+
+@media (max-width: 760px) {
+  .contact--city { padding-top: clamp(56px, 12vw, 96px); }
+  .contact-city__stage { height: clamp(340px, 82vw, 460px); }
+  .contact-city__stage .layer--front { display: none; }
+  .contact-city__stage .layer--range { bottom: 24%; }
+  .contact-city .city__moon { left: auto; right: 9%; top: 20px; width: clamp(56px, 15vw, 74px); }
+  .city-plate { width: min(46%, 300px); }
+  .services::before { display: none; }
+}
+
+/* 22. Reduced motion ======================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-in { opacity: 1; transform: none; transition: none; }
+  .split span { opacity: 1; transform: none; transition: none; }
+  .float, .cloud, .beacon, .city-plate__glow, .city-lights i,
+  .win-blink-0, .win-blink-1, .win-blink-2,
+  .roof-beacon, .lamp-glow, .sign-glow, .city__moon {
+    animation: none !important;
+  }
+  .tilt { transform: none !important; }
+  .sparkle { animation: none !important; opacity: 0 !important; }
+}
+
+/* 23. Neon district: contact as a floating holographic panel ================ */
+
+.contact--city { background: none; overflow: visible; padding-block: clamp(90px, 14vw, 180px); }
+.contact--city::before { display: none; }
+
+.contact--city .contact__inner {
+  max-width: 820px;
+  margin-inline: auto;
+  padding: clamp(34px, 5vw, 64px) clamp(20px, 5vw, 56px);
+  border-radius: clamp(20px, 3vw, 30px);
+  background: linear-gradient(162deg, rgba(58, 22, 130, .52) 0%, rgba(16, 6, 44, .8) 58%, rgba(10, 4, 30, .88) 100%);
+  border: 1px solid rgba(74, 232, 240, .42);
+  box-shadow:
+    inset 0 1px 0 rgba(210, 252, 255, .32),
+    0 0 0 1px rgba(255, 79, 190, .16),
+    0 0 70px -14px rgba(140, 80, 255, .7),
+    0 0 44px -20px rgba(74, 232, 240, .65),
+    0 50px 90px -50px rgba(0, 0, 0, 1);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  overflow: hidden;
+}
+/* a slow band of light travelling across the glass */
+.contact--city .contact__inner::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 38%, rgba(120, 240, 255, .11) 50%, transparent 62%);
+  transform: translateX(-100%);
+  
+  pointer-events: none;
+}
+@keyframes glass-sweep { 0%, 55% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+.contact--city .contact__inner::before { display: none; }
+
+/* neon accents on the interactive bits */
+.contact__email { border-bottom-color: rgba(255, 79, 190, .7); }
+.copy:hover, .btn--quiet:hover { box-shadow: 0 0 26px -6px rgba(74, 232, 240, .7), inset 0 1px 0 rgba(220, 252, 255, .3); }
+.btn--solid:hover { box-shadow: inset 0 1px 0 rgba(255, 240, 250, .8), 0 20px 38px -16px rgba(226, 75, 255, .8), 0 0 40px -6px rgba(255, 79, 190, .7); }
+.project:hover { box-shadow: 0 0 0 1px rgba(255, 79, 190, .22), 0 0 50px -14px rgba(74, 232, 240, .55), 0 40px 80px -42px rgba(0, 0, 0, 1); }
+.section__title { text-shadow: 0 0 40px rgba(150, 90, 255, .45), 0 2px 18px rgba(0, 0, 0, .55); }

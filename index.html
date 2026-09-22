@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tatyana Faradilla R. - Portfolio</title>
+<meta name="description" content="Portfolio of Tatyana Faradilla R., an Informatics Engineering student working across web development, software, UI/UX, and design.">
+<meta name="author" content="Tatyana Faradilla R.">
+<meta name="theme-color" content="#0A0418">
+
+<!-- Social preview (WhatsApp, Facebook, Twitter, etc.) -->
+<meta property="og:title" content="Tatyana Faradilla R. - Portfolio">
+<meta property="og:description" content="Informatics Engineering student working across code and design.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilikecaesarsalad.github.io/tatyanaportofolio/">
+<meta property="og:image" content="https://ilikecaesarsalad.github.io/tatyanaportofolio/assets/images/profilepicture.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/images/city-window.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Karla-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/city.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/sections.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     Edit the links below to match your section names.
+     ============================================================ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <svg class="nav__brand-mark" aria-hidden="true" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id="neonHeartGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D7FBFF"/>
+            <stop offset="100%" stop-color="#4AE8F0"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#neonHeartGrad)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <span class="nav__brand-name">Tatyana&nbsp;F.</span>
+    </a>
+
+    <nav class="nav__menu" id="nav-menu" aria-label="Main">
+      <ul class="nav__list">
+        <li><a href="#services">What I do</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+      <span class="nav__toggle-text">Menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SECTION 1 - INTRODUCTION / HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="wrap hero__inner">
+
+    <!-- Small notes in the corners. Keep them short. -->
+    <p class="hero__note hero__note--tl">Based in Indonesia</p>
+    <p class="hero__note hero__note--tr">Open for projects</p>
+
+    <div class="hero__title">
+      <h1>
+        <span class="hero__first">Tatyana</span>
+        <span class="hero__second">Faradilla R.</span>
+      </h1>
+      <p class="hero__role">Informatics Engineering Student</p>
+    </div>
+
+    <div class="hero__body">
+      <div class="hero__text">
+        <p class="hero__intro">
+          I'm a fourth year Informatics Engineering student with an interest in web development,
+          software, and design. I enjoy working across both code and visual design, from building
+          websites and small applications to planning interfaces and editing content. I like
+          understanding a problem before I start building, and I pay attention to the small details
+          that make a project feel clear, polished, and complete.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#projects">View my work</a>
+          <a class="btn btn--quiet" href="#contact">Let's work together</a>
+        </div>
+      </div>
+
+      <!-- Hero photo. Replace src with assets/images/portrait.jpg -->
+      <figure class="hero__photo" data-parallax="-0.04">
+
+        <img src="assets/images/profilepicture.jpg" alt="Tatyana Faradilla R. Portrait" width="900" height="1150">
+      </figure>
+    </div>
+
+    <p class="hero__scroll" aria-hidden="true"><span></span>Scroll</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 - WHAT I DO
+     Add or remove a <li class="craft"> block to change the list.
+     ============================================================ -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <header class="section__head reveal stage-in">
+      <h2 class="section__title" data-split>What I do</h2>
+      <p class="section__note">Five things I keep coming back to, three technical, two visual, all of them about making something usable.</p>
+    </header>
+
+    <ul class="crafts">
+      <li class="craft reveal tilt">
+        <h3 class="craft__name">Interior design</h3>
+        <p class="craft__desc">Space planning, visual composition, and atmosphere that still works day to day.</p>
+      </li>
+      <li class="craft reveal tilt">
+        <h3 class="craft__name">Video editing</h3>
+        <p class="craft__desc">Cutting, pacing, and transitions that keep a story moving and easy to follow.</p>
+      </li>
+      <li class="craft reveal tilt">
+        <h3 class="craft__name">Website development</h3>
+        <p class="craft__desc">Responsive, functional sites with careful attention to layout and detail.</p>
+      </li>
+      <li class="craft reveal tilt">
+        <h3 class="craft__name">Software &amp; app development</h3>
+        <p class="craft__desc">Practical applications built around how people actually use them.</p>
+      </li>
+      <li class="craft reveal tilt">
+        <h3 class="craft__name">UI/UX design</h3>
+        <p class="craft__desc">Clean interfaces and flows that make sense without explanation.</p>
+      </li>
+    </ul>
+
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 - HARD SKILLS
+     Edit the <li> items inside each group. No levels, no percentages.
+     ============================================================ -->
+<section class="section skills" id="skills">
+  <div class="wrap">
+    <header class="section__head reveal stage-in">
+      <h2 class="section__title" data-split>Skills &amp; tools</h2>
+      <p class="section__note">What I work with regularly, grouped by the kind of work rather than by level.</p>
+    </header>
+
+    <div class="skills__grid">
+      <div class="skills__group reveal stage-in">
+        <h3 class="skills__label">Code</h3>
+        <ul class="chips">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>Python</li><li>C</li><li>SQL</li>
+        </ul>
+      </div>
+      <div class="skills__group reveal stage-in">
+        <h3 class="skills__label">Building</h3>
+        <ul class="chips">
+          <li>Web development</li><li>Software &amp; app development</li><li>Responsive web design</li>
+          <li>Database development</li><li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+      <div class="skills__group reveal stage-in">
+        <h3 class="skills__label">Design</h3>
+        <ul class="chips">
+          <li>UI/UX design</li><li>Figma</li><li>Wireframing &amp; prototyping</li>
+          <li>Adobe software</li><li>3D &amp; design software</li>
+        </ul>
+      </div>
+      <div class="skills__group reveal stage-in">
+        <h3 class="skills__label">Media</h3>
+        <ul class="chips">
+          <li>Video editing</li><li>Pacing &amp; storytelling</li><li>Colour &amp; grading</li><li>Motion basics</li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 - PROJECTS
+     Clicking a preview (or "Open project") opens the real project
+     from projects/<name>/ in a full-screen viewer (js/projects.js).
+
+     To add a project, copy one <article class="work"> block:
+       - data-project   short id, also used in links: #project/<id>
+       - data-category  one or more of: web app uiux interior video
+       - point every href at projects/<name>/...
+       - the element marked data-origin is where the viewer grows from
+       - links with data-view become tabs in the viewer; data-label
+         is the tab name (one data-view link = no tabs)
+       - <template class="project__tips"> = "How to try it" list
+
+     "My contribution" lines marked CONFIRM still need your check.
+     ============================================================ -->
+<section class="section projects" id="projects">
+  <div class="wrap">
+    <header class="section__head reveal stage-in">
+      <h2 class="section__title" data-split>Selected projects</h2>
+      <p class="section__note">Every project here is the real thing. Open one to use it, then come back when you're done.</p>
+    </header>
+
+    <div class="filters reveal" role="group" aria-label="Filter projects by type">
+      <button class="filter is-active" data-filter="all" aria-pressed="true">Everything</button>
+      <button class="filter" data-filter="web" aria-pressed="false">Websites</button>
+      <button class="filter" data-filter="app" aria-pressed="false">Applications</button>
+      <button class="filter" data-filter="uiux" aria-pressed="false">UI/UX</button>
+      <button class="filter" data-filter="interior" aria-pressed="false">Interior</button>
+      <button class="filter" data-filter="video" aria-pressed="false">Video</button>
+    </div>
+
+    <div class="works" id="gallery">
+
+      <!-- PROJECT: Hotel Sriwidjaja -->
+      <article class="work reveal" data-category="web" data-project="hotel-sriwidjaja" data-title="Hotel Sriwidjaja">
+        <a class="work__stage work__stage--browser tilt" href="projects/hotel-sriwidjaja/index.html" data-open="hotel-sriwidjaja" aria-label="Open Hotel Sriwidjaja, the live website">
+          <span class="device device--browser device--back" aria-hidden="true">
+            <span class="device__chrome"><i></i><i></i><i></i><span class="device__url">Admin panel</span></span>
+            <span class="device__screen"><img src="assets/images/shot-hotel-admin.jpg" alt="" loading="lazy" width="1280" height="800"></span>
+          </span>
+          <span class="device device--browser">
+            <span class="device__chrome"><i></i><i></i><i></i><span class="device__url">Guest site</span></span>
+            <span class="device__screen" data-origin><img src="assets/images/shot-hotel-guest.jpg" alt="Hotel Sriwidjaja home page" loading="lazy" width="1280" height="800"></span>
+          </span>
+          <span class="work__cue"><span class="work__cue-dot" aria-hidden="true"></span>Open project</span>
+        </a>
+
+        <div class="work__info">
+          <p class="work__kind">Website</p>
+          <h3 class="work__title"><a href="projects/hotel-sriwidjaja/index.html" data-open="hotel-sriwidjaja">Hotel Sriwidjaja</a></h3>
+          <p class="work__desc">The website of Hotel Sriwidjaja, a traditional lodging on Jalan Letkol Iskandar in central Palembang, with a separate admin panel for the staff.</p>
+          <dl class="work__facts">
+            <div class="work__fact">
+              <dt>Purpose</dt>
+              <dd>Lets guests look through the rooms and book online, and gives staff one place to confirm payments and manage each stay.</dd>
+            </div>
+            <div class="work__fact">
+              <dt>Key features</dt>
+              <dd>
+                <ul class="work__list">
+                  <li>Three-step booking: dates and room, guest details, then payment</li>
+                  <li>Pay by QRIS (BCA or e-wallet) and upload the transfer receipt, or pay at the cashier</li>
+                  <li>Guest accounts with booking status and history</li>
+                  <li>Admin panel to confirm or reject payments and check guests in and out</li>
+                  <li>Indonesian and English</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="work__fact">
+              <dt>Built with</dt>
+              <dd>
+                <ul class="work__stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>localStorage</li></ul>
+                <p class="work__note">The version here is an offline build: bookings are kept in the browser instead of the original Express API, so a booking made on the guest site shows up in the admin panel.</p>
+              </dd>
+            </div>
+            <div class="work__fact">
+              <dt>My contribution</dt>
+              <dd>Designed and developed the website from scratch while working at the hotel as IT &amp; Web Administrator.</dd>
+            </div>
+          </dl>
+          <p class="work__actions">
+            <a class="btn btn--solid" href="projects/hotel-sriwidjaja/index.html" data-open="hotel-sriwidjaja" data-view="site" data-label="Guest site">Open project</a>
+            <a class="btn btn--quiet" href="projects/hotel-sriwidjaja/admin.html" data-open="hotel-sriwidjaja" data-view="admin" data-label="Admin panel">Open admin panel</a>
+          </p>
+        </div>
+        <template class="project__tips">
+          <li>Sign in as the demo guest <b>dewi.lestari@gmail.com</b> with password <b>dewi123</b>, or register your own account (it asks for a Gmail address).</li>
+          <li>Make a booking, then switch to the Admin panel tab to accept it. Both sides share the same bookings.</li>
+        </template>
+      </article>
+
+      <!-- PROJECT: Egg Timer -->
+      <article class="work work--flip reveal" data-category="app" data-project="egg-timer" data-title="Egg Timer">
+        <a class="work__stage work__stage--phone tilt" href="projects/egg-timer/index.html" data-open="egg-timer" aria-label="Open Egg Timer, the live app">
+          <span class="device device--phone">
+            <span class="device__screen" data-origin><img src="assets/images/shot-egg-timer.jpg" alt="Egg Timer counting down a runny-yolk egg" loading="lazy" width="560" height="1212"></span>
+          </span>
+          <span class="work__cue"><span class="work__cue-dot" aria-hidden="true"></span>Open project</span>
+        </a>
+
+        <div class="work__info">
+          <p class="work__kind">Application</p>
+          <h3 class="work__title"><a href="projects/egg-timer/index.html" data-open="egg-timer">Egg Timer</a></h3>
+          <p class="work__desc">A pixel-art egg timer set in a little kitchen.</p>
+          <dl class="work__facts">
+            <div class="work__fact">
+              <dt>Purpose</dt>
+              <dd>Times a boiled egg to the doneness you pick and rings when it's ready.</dd>
+            </div>
+            <div class="work__fact">
+              <dt>Key features</dt>
+              <dd>
+                <ul class="work__list">
+                  <li>Four presets: runny 6 min, soft-boiled 8, hard-boiled 10, overcooked 15</li>
+                  <li>Start, pause and reset, with a progress bar</li>
+                  <li>Bubbles and steam that speed up as the egg cooks</li>
+                  <li>An alarm with sound, and vibration on phones, until you tap to stop it</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="work__fact">
+              <dt>Built with</dt>
+              <dd><ul class="work__stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Web Audio API</li><li>Vibration API</li></ul></dd>
+            </div>
+            <div class="work__fact">
+              <dt>My contribution</dt>
+              <!-- CONFIRM: not stated in your resume or the project files -->
+              <dd>Designed and built the app: layout, timer logic, sound and animation.</dd>
+            </div>
+          </dl>
+          <p class="work__actions">
+            <a class="btn btn--solid" href="projects/egg-timer/index.html" data-open="egg-timer" data-view="app" data-label="Egg Timer">Open project</a>
+          </p>
+        </div>
+        <template class="project__tips">
+          <li>Sound starts after your first tap, so turn your volume up.</li>
+          <li>Pick an egg along the bottom, then press Start.</li>
+        </template>
+      </article>
+
+      <!-- PROJECT: Tourify -->
+      <article class="work reveal" data-category="uiux app" data-project="tourify" data-title="Tourify">
+        <a class="work__stage work__stage--phones tilt" href="projects/tourify/index.html" data-open="tourify" aria-label="Open Tourify, the live prototype">
+          <span class="device device--phone device--back" aria-hidden="true">
+            <span class="device__screen"><img src="assets/images/shot-tourify-home.jpg" alt="" loading="lazy" width="560" height="1213"></span>
+          </span>
+          <span class="device device--phone">
+            <span class="device__screen" data-origin><img src="assets/images/shot-tourify-splash.jpg" alt="Tourify splash screen" loading="lazy" width="560" height="1213"></span>
+          </span>
+          <span class="work__cue"><span class="work__cue-dot" aria-hidden="true"></span>Open project</span>
+        </a>
+
+        <div class="work__info">
+          <p class="work__kind">UI/UX design</p>
+          <h3 class="work__title"><a href="projects/tourify/index.html" data-open="tourify">Tourify</a></h3>
+          <p class="work__desc">A mobile travel app prototype for discovering Indonesia one city at a time.</p>
+          <dl class="work__facts">
+            <div class="work__fact">
+              <dt>Purpose</dt>
+              <dd>Turns the Figma design into a clickable prototype, so you can go through the app the way a traveller would instead of looking at static frames.</dd>
+            </div>
+            <div class="work__fact">
+              <dt>Key features</dt>
+              <dd>
+                <ul class="work__list">
+                  <li>Ten screens, from splash and sign-in to destination details, favorites and profile</li>
+                  <li>City search, plus Nature, Design and History filters</li>
+                  <li>Favorites and profile edits, including a new photo, saved on your device</li>
+                  <li>App-style transitions between screens</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="work__fact">
+              <dt>Built with</dt>
+              <dd><ul class="work__stack"><li>Figma</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>localStorage</li></ul></dd>
+            </div>
+            <div class="work__fact">
+              <dt>My contribution</dt>
+              <!-- CONFIRM: not stated in your resume or the project files -->
+              <dd>Designed the screens in Figma and turned them into a working prototype.</dd>
+            </div>
+          </dl>
+          <p class="work__actions">
+            <a class="btn btn--solid" href="projects/tourify/index.html" data-open="tourify" data-view="app" data-label="Tourify">Open project</a>
+          </p>
+        </div>
+        <template class="project__tips">
+          <li>Tap Explore, then Sign In with any email. The account only lives in this browser.</li>
+          <li>Open Bali and try the Nature, Design and History chips.</li>
+          <li>Tap the heart on a destination, then find it under Favorites.</li>
+        </template>
+      </article>
+    </div>
+    <p class="gallery__empty" id="gallery-empty" hidden>Nothing in this category yet.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5 - EXPERIENCE
+     Taken from the resume. Copy one <li class="tl"> to add a job;
+     most recent first. The glowing line fills as you scroll.
+     ============================================================ -->
+<section class="section experience" id="experience">
+  <div class="wrap">
+    <header class="section__head reveal stage-in">
+      <h2 class="section__title" data-split>Experience</h2>
+      <p class="section__note">Where I've worked so far, most recent first.</p>
+    </header>
+
+    <ol class="timeline" data-timeline>
+      <li class="tl reveal">
+        <p class="tl__date"><time datetime="2023-09">September 2023</time> – <time datetime="2025-08">August 2025</time></p>
+        <span class="tl__dot" aria-hidden="true"></span>
+        <div class="tl__body">
+          <h3 class="tl__role">IT &amp; Web Administrator</h3>
+          <p class="tl__org">Hotel Sriwidjaja, Palembang, Indonesia</p>
+          <p class="tl__desc">Designed and developed the hotel’s website from scratch while managing IT systems and MS Office applications. Maintained data integrity, ensured smooth digital operations, and provided technology support to staff to improve overall efficiency and guest experience.</p>
+          <a class="link-quiet tl__link" href="#project/hotel-sriwidjaja" data-open="hotel-sriwidjaja">Open the hotel website</a>
+        </div>
+      </li>
+
+      <li class="tl reveal">
+        <p class="tl__date"><time datetime="2022-08">August 2022</time> – <time datetime="2023-07">July 2023</time></p>
+        <span class="tl__dot" aria-hidden="true"></span>
+        <div class="tl__body">
+          <h3 class="tl__role">Graphic Editor</h3>
+          <p class="tl__org">Crowdspring, USA</p>
+          <p class="tl__desc">Managed detailed visual editing and refinement for a variety of client projects, ensuring brand consistency and enhancing overall creative quality. Collaborated with clients and design teams to transform concepts into polished final assets that strengthened brand identity and audience engagement.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5b - EDUCATION & LANGUAGES
+     Taken from the resume. No dates or proficiency levels are
+     listed there, so none are shown.
+     ============================================================ -->
+<section class="section education" id="education">
+  <div class="wrap">
+    <header class="section__head reveal stage-in">
+      <h2 class="section__title" data-split>Education</h2>
+      <p class="section__note">Where I studied, and the languages I work in.</p>
+    </header>
+
+    <div class="edu">
+      <article class="edu__card reveal">
+        <p class="edu__field">Informatics Engineering</p>
+        <h3 class="edu__school">Multi Data University Palembang</h3>
+        <p class="edu__desc">Focused on software development, programming, database management, and information systems, preparing for careers in IT, web development, and data-driven solutions.</p>
+      </article>
+
+      <div class="edu__langs reveal">
+        <h3 class="edu__label">Languages</h3>
+        <ul class="chips">
+          <li lang="en">English</li>
+          <li lang="id">Indonesian (Bahasa Indonesia)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6 - HOW I WORK
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="about__panel">
+      <div class="about__intro reveal">
+        <h2 class="section__title" data-split>How I work</h2>
+        <p class="about__lead">I'm still a student, so I won't pretend to know everything. What I can promise is
+          that I'll take your project seriously and tell you honestly what I can and can't do.</p>
+        <figure class="about__photo" data-parallax="-0.03">
+          <img src="assets/images/student-portrait.jpg" alt="Portrait photo" loading="lazy">
+        </figure>
+      </div>
+
+      <ul class="ways">
+        <li class="way reveal tilt">
+          <h3>Understand first, build second</h3>
+          <p>I'd rather ask a few more questions at the start than rebuild something later. Most problems are easier once you know what's actually being asked for.</p>
+        </li>
+        <li class="way reveal tilt">
+          <h3>Details decide the result</h3>
+          <p>Spacing, naming, alignment, loading time. Individually small, but together they're the difference between working and finished.</p>
+        </li>
+        <li class="way reveal tilt">
+          <h3>Function and appearance together</h3>
+          <p>Something can look good and still be confusing to use. I try to keep both sides in mind instead of trading one for the other.</p>
+        </li>
+        <li class="way reveal tilt">
+          <h3>Clear, plain communication</h3>
+          <p>I explain what I'm doing without hiding behind technical words, and I say early if something will take longer than expected.</p>
+        </li>
+        <li class="way reveal tilt">
+          <h3>Revisions are part of it</h3>
+          <p>Feedback usually makes the result better. I'd rather change something in the second week than defend it in the last one.</p>
+        </li>
+        <li class="way reveal tilt">
+          <h3>Practical and easy to maintain</h3>
+          <p>The final result should be something you can actually use and update after I hand it over, not only something that looks good once.</p>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7 - CONTACT
+     WhatsApp uses wa.me with the number in international format
+     (country code, no +, no leading 0). iMessage uses an sms: link,
+     which opens Messages on Apple devices; elsewhere the address is
+     copied instead (js/main.js).
+     ============================================================ -->
+<section class="section contact contact--city" id="contact">
+
+  <!-- Contact content floating above the street -->
+  <div class="wrap contact__inner">
+
+    <h2 class="contact__title reveal">
+      <span class="contact__first">Let's work</span>
+      <span class="contact__second">together</span>
+    </h2>
+
+    <p class="contact__lead reveal">I'm open to freelance projects, collaborations, and internship opportunities.
+      Send me a note about what you're working on and I'll reply as soon as I can.</p>
+
+    <ul class="reach reveal">
+      <li class="reach__item">
+        <a class="reach__link" href="mailto:dylladylla24@gmail.com">
+          <span class="reach__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="reach__text"><span class="reach__label">Email</span><span class="reach__value">dylladylla24@gmail.com</span></span>
+        </a>
+        <button class="copy" type="button" data-copy="dylladylla24@gmail.com" data-copied="Email address copied">Copy</button>
+      </li>
+      <li class="reach__item">
+        <a class="reach__link" href="https://wa.me/85270444985" target="_blank" rel="noopener">
+          <span class="reach__icon reach__icon--wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg></span>
+          <span class="reach__text"><span class="reach__label">WhatsApp</span><span class="reach__value">+852 7044 4985</span></span>
+        </a>
+        <button class="copy" type="button" data-copy="+85270444985" data-copied="Phone number copied">Copy</button>
+      </li>
+      <li class="reach__item">
+        <a class="reach__link" href="sms:icedamerican0@icloud.com" data-imessage="icedamerican0@icloud.com">
+          <span class="reach__icon reach__icon--im"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.36-9 7.5 0 2.2 1.13 4.17 2.94 5.54L5 20.5l3.73-1.87c1.03.3 2.13.47 3.27.47 4.97 0 9-3.36 9-7.6S16.97 4 12 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          <span class="reach__text"><span class="reach__label">iMessage</span><span class="reach__value">icedamerican0@icloud.com</span></span>
+        </a>
+        <button class="copy" type="button" data-copy="icedamerican0@icloud.com" data-copied="iMessage address copied">Copy</button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     PROJECT VIEWER - filled in by js/projects.js
+     ============================================================ -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+  <div class="viewer__scrim" data-close></div>
+  <div class="viewer__frame">
+    <div class="viewer__ghost" aria-hidden="true"></div>
+    <header class="viewer__bar">
+      <button class="viewer__back" type="button" data-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Back to portfolio</span>
+      </button>
+      <p class="viewer__title" id="viewer-title"></p>
+      <div class="viewer__tabs" role="tablist" aria-label="Project views" hidden></div>
+      <div class="viewer__tools">
+        <button class="viewer__tool viewer__tool--text" type="button" data-tips aria-expanded="false" aria-controls="viewer-tips"><span class="viewer__tool-long">How to try it</span><span class="viewer__tool-short">Tips</span></button>
+        <button class="viewer__tool" type="button" data-reload aria-label="Restart project" title="Restart project">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="viewer__tool" href="#" target="_blank" rel="noopener" data-newtab aria-label="Open in a new tab" title="Open in a new tab">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </header>
+    <div class="viewer__tips" id="viewer-tips" hidden>
+      <p class="viewer__tips-head">How to try it</p>
+      <ul class="viewer__tips-list"></ul>
+      <button class="viewer__tips-close" type="button" aria-label="Hide tips">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="viewer__stage">
+      <div class="viewer__loading" aria-hidden="true">
+        <p class="viewer__loading-name"></p>
+        <i class="viewer__loading-line"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js" defer></script>
+<script src="js/living-city.js" defer></script>
+<script src="js/city.js" defer></script>
+<script src="js/projects.js" defer></script>
+</body>
+</html>
