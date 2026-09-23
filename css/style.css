@@ -475,13 +475,18 @@ a { color: inherit; text-decoration: none; }
 .nav__toggle {
   display: none;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   background: none;
   border: 0;
-  padding: 8px 4px;
+  padding: 10px 8px;
+  min-height: 44px;
+  min-width: 44px;
   cursor: pointer;
   font-size: .9rem;
   color: #E7F1FF;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .nav__toggle-bars { display: inline-block; width: 20px; }
 .nav__toggle-bars i {
@@ -1133,7 +1138,7 @@ a { color: inherit; text-decoration: none; }
 
 .foot {
   border-top: 1px solid var(--line);
-  padding-block: 26px 34px;
+  padding-block: 26px calc(34px + env(safe-area-inset-bottom, 0px));
   background: rgba(4, 9, 24, .85);
 }
 .foot__inner {
@@ -1201,6 +1206,15 @@ a { color: inherit; text-decoration: none; }
   .foot__inner { flex-direction: column; }
 }
 
+@media (max-width: 480px) {
+  .hero__first { font-size: clamp(2.3rem, 11.5vw, 4.4rem); word-break: break-word; }
+  .hero__second { font-size: clamp(2.0rem, 10vw, 3.8rem); margin-left: 0; }
+  .contact__first { font-size: clamp(2.3rem, 10.5vw, 4.2rem); }
+  .contact__second { font-size: clamp(2.0rem, 9.5vw, 3.8rem); }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn { justify-content: center; }
+}
+
 /* blur is expensive on small devices - drop the heaviest panes */
 @media (max-width: 620px), (hover: none) {
   .about__panel { backdrop-filter: none; -webkit-backdrop-filter: none; background: linear-gradient(158deg, rgba(20, 40, 88, .92), rgba(8, 16, 40, .95)); }
@@ -1222,10 +1236,13 @@ a { color: inherit; text-decoration: none; }
   .hero__intro, .hero__actions, .hero__photo, .hero__scroll { opacity: 1; }
   .hero::before { transform: none; }
 }
-/* Custom Neon Heart Cursor */
-html, body {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feFlood flood-color="%23FF007F" result="pink"/><feComposite in="pink" in2="SourceAlpha" operator="in" result="pinkShape"/><feGaussianBlur in="pinkShape" stdDeviation="2.5" result="blur1"/><feGaussianBlur in="pinkShape" stdDeviation="4.5" result="blur2"/><feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23FFFFFF" transform="translate(9, 8) scale(0.75)"/></g></svg>') 18 18, auto !important;
-}
-a, button, input, textarea, select, .btn, .link-quiet, .contact__email, .nav__list a, .filter, .chips li, .copy {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feFlood flood-color="%23FF007F" result="pink"/><feComposite in="pink" in2="SourceAlpha" operator="in" result="pinkShape"/><feGaussianBlur in="pinkShape" stdDeviation="2.5" result="blur1"/><feGaussianBlur in="pinkShape" stdDeviation="4.5" result="blur2"/><feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23FFFFFF" transform="translate(9, 8) scale(0.75)"/></g></svg>') 18 18, pointer !important;
+
+/* Custom Neon Heart Cursor (only for desktop pointer devices to keep mobile touch fast and native) */
+@media (hover: hover) and (pointer: fine) {
+  html, body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feFlood flood-color="%23FF007F" result="pink"/><feComposite in="pink" in2="SourceAlpha" operator="in" result="pinkShape"/><feGaussianBlur in="pinkShape" stdDeviation="2.5" result="blur1"/><feGaussianBlur in="pinkShape" stdDeviation="4.5" result="blur2"/><feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23FFFFFF" transform="translate(9, 8) scale(0.75)"/></g></svg>') 18 18, auto !important;
+  }
+  a, button, input, textarea, select, .btn, .link-quiet, .contact__email, .nav__list a, .filter, .chips li, .copy {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feFlood flood-color="%23FF007F" result="pink"/><feComposite in="pink" in2="SourceAlpha" operator="in" result="pinkShape"/><feGaussianBlur in="pinkShape" stdDeviation="2.5" result="blur1"/><feGaussianBlur in="pinkShape" stdDeviation="4.5" result="blur2"/><feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23FFFFFF" transform="translate(9, 8) scale(0.75)"/></g></svg>') 18 18, pointer !important;
+  }
 }
